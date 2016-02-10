@@ -1,0 +1,8 @@
+# run as gnuplot -persist ResidualsT
+set logscale y
+set title "Residual T"
+set ylabel 'Residual'
+set xlabel 'Iteration'
+plot "< cat ./flangeStatic/logs/T_0 | cut -d' ' -f2| tr -d ','" title 'T static' with lines,\
+"< cat ./flangeF/logs/T_0 | cut -d' ' -f2| tr -d ','" title 'T F' with lines, \
+"< cat ./flangeGradT/logs/T_0 | cut -d' ' -f2| tr -d ','" title 'T var GradT' with lines
